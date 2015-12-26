@@ -3,29 +3,11 @@ bungeecord:
   build: bungeecord
   stdin_open: true
   tty: true
-  restart: always
-  ports:
-    - "0.0.0.0:25577:25577"
-  links:
-    - spigot:spigot
 
 spigot:
   build: spigot
-  environment:
-    - MINECRAFT_VERSION=1.8.8
-    - DEFAULT_OP=dinnerbone
-    - MINECRAFT_EULA=true
   stdin_open: true
   tty: true
-  restart: always
-  links:
-    - spigot_db:spigot_db
 
 spigot_db:
   image: mysql:5.6
-  environment:
-    - MYSQL_ROOT_PASSWORD=spigot
-    - MYSQL_DATABASE=spigot
-    - MYSQL_USER=spigot
-    - MYSQL_PASSWORD=spigot
-  restart: always
