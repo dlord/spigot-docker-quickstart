@@ -10,7 +10,7 @@ bungeecord:
     - spigot:spigot
 
 spigot:
-  build: lobby
+  build: spigot
   environment:
     - MINECRAFT_VERSION=1.8.8
     - DEFAULT_OP=dinnerbone
